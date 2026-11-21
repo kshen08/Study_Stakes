@@ -1,0 +1,25 @@
+{
+  "name": "study-helper",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k -n server,client -c blue,magenta \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:server": "node --watch-path=server --watch-path=shared --no-warnings=ExperimentalWarning server/index.js",
+    "dev:client": "vite",
+    "build": "vite build",
+    "start": "vite build && node --no-warnings=ExperimentalWarning server/index.js"
+  },
+  "dependencies": {
+    "express": "^5.3.0",
+    "multer": "^2.5.0",
+    "unpdf": "^2.2.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.3.0",
+    "concurrently": "^10.0.7",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "vite": "^8.3.8"
+  }
+}
